@@ -127,8 +127,8 @@ analyze_channels <- function(data) {
 
 
 # result <- analyze_channels(data)
-# # grid.arrange(result$spend_distribution, result$grp_distribution, ncol = 1)
-# # print(result$correlations)
+# grid.arrange(result$spend_distribution, result$grp_distribution, ncol = 1)
+# print(result$correlations)
 
 # 4. Marketing Mix Modeling
 build_mmm <- function(data) {
@@ -313,7 +313,9 @@ run_analysis <- function(file_path) {
   data <- prepare_data(data)
   
   # 3. Construire le modèle de marketing mix
-  # analyze_results <- analyze_channels(data)
+  result <- analyze_channels(data)
+  grid.arrange(result$spend_distribution, result$grp_distribution, ncol = 1)
+  print(result$correlations)
 
   # 4. Marketing Mix Modeling
   model_results <- build_mmm(data)
